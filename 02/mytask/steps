@@ -1,0 +1,6 @@
+mkdir mytask
+cd mytask
+tsc --init
+code .
+Create HelloWorld.ts and write some code
+Run "Run Build Task"
