@@ -113,7 +113,42 @@ myGenericWithMultipleType.print = (id, name) => {
 };
 // Call the function
 myGenericWithMultipleType.print(myGenericWithMultipleType.id, myGenericWithMultipleType.name);
-function create(c) {
-    return new c();
+/**
+ * Represents a Person with a name and an age.
+ */
+class Person2 {
+    /**
+     * Creates a new instance of a Person2.
+     * @param name The name of the person.
+     * @param age The age of the person.
+     */
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    /**
+     * Prints a greeting message for the person.
+     */
+    greet() {
+        console.log(`Hello ${this.name} at age ${this.age}`);
+    }
 }
-//const test = create<number>();
+/**
+ * Creates a new instance of a class with the given name and age parameters.
+ * @param c The constructor of the class to create an instance of.
+ * @param name The name parameter for the class constructor.
+ * @param age The age parameter for the class constructor.
+ * @returns A new instance of the class.
+ */
+function create(c, name, age) {
+    return new c(name, age);
+}
+// Create a new instance of a Person2 with the name "Alice" and age 22.
+const person2 = create(Person2, "ALice", 22);
+// Output the created person2 object.
+console.log(person2);
+function createAbstract(constructor, ...args) {
+    return new constructor(...args);
+}
+const abstract1 = createAbstract(Person2, "Bob", 111);
+console.log(abstract1.greet());
