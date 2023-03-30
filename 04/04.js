@@ -14,3 +14,5 @@ const isString = (x) => {
 };
 console.log("Is testString a string? " + isString("testString"));
 console.log("Is 1 a string? " + isString(1));
+//type I3 = string | boolean
+// Conditional types
